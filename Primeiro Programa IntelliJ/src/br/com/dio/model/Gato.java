@@ -1,7 +1,6 @@
 package br.com.dio.model;
 
-import java.util.Objects;
-
+import br.com.dio.PrimeiroPrograma
 public class Gato {
     private String nome;
     private String cor;
@@ -10,6 +9,7 @@ public class Gato {
     public Gato() {}
 
     public Gato(String nome, String cor, Integer idade) {
+        super();
         this.nome = nome;
         this.cor = cor;
         this.idade = idade;
@@ -35,20 +35,38 @@ public class Gato {
         return idade;
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(cor, idade, nome);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Gato other = (Gato) obj;
+        return Objects.equals(cor, other.cor) && Objects.equals(idade, other.idade) && Objects.equals(nome, other.nome);
+    }
+
     public void setIdade(Integer idade) {
         this.idade = idade;
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Gato gato = (Gato) o;
-        return Objects.equals(nome, gato.nome) && Objects.equals(cor, gato.cor) && Objects.equals(idade, gato.idade);
+    public String toString() {
+        return "Gato [nome=" + nome + ", cor=" + cor + ", idade=" + idade + "]";
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(nome, cor, idade);
-    }
+
+	/*public Gato(String nome, String cor,Integer idade) {
+		this.nome= nome;
+		this.cor= cor;
+		this.idade= idade;
+
+	}*/
+
 }
