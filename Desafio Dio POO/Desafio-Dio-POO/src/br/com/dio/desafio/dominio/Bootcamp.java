@@ -22,7 +22,6 @@ public class Bootcamp {
     }
 
     public String getDescricao() {
-
         return descricao;
     }
     public void setDescricao(String descricao) {
@@ -30,34 +29,26 @@ public class Bootcamp {
     }
 
     public LocalDate getDataInicial() {
-
         return dataInicial;
     }
 
     public LocalDate getDataFinal() {
-
         return dataFinal;
     }
     public Set<Dev> getDevsIncritos() {
-
         return devsIncritos;
     }
-
     public void setDevsIncritos(Set<Dev> devsIncritos) {
-
         this.devsIncritos = devsIncritos;
     }
 
     public Set<Conteudo> getConteudos() {
-
         return conteudos;
     }
 
     public void setConteudos(Set<Conteudo> conteudos) {
-
         this.conteudos = conteudos;
     }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -65,7 +56,6 @@ public class Bootcamp {
         Bootcamp bootcamp = (Bootcamp) o;
         return Objects.equals(nome, bootcamp.nome) && Objects.equals(descricao, bootcamp.descricao) && Objects.equals(dataFinal, bootcamp.dataFinal) && Objects.equals(devsIncritos, bootcamp.devsIncritos) && Objects.equals(conteudos, bootcamp.conteudos);
     }
-
     @Override
     public int hashCode() {
         return Objects.hash(nome, descricao, dataInicial, dataFinal, devsIncritos, conteudos);
